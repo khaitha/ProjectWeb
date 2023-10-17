@@ -1,3 +1,6 @@
+/*------------------------------------------------------------------------------------------------*/
+/* Body Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,15 +8,45 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+    overflow-y: auto; /* Allows vertical scrollbar if needed */
 }
 
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-grow: 1;
+    flex: auto;
+}
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/* Header Styles */
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: -10px;
+}
+/* Header h1 Styles */
+header h1 {
+    text-align: middle;
 }
 
+header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 85px;
+    left: 15px;
+}
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/* Navigation Styles */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -28,11 +61,16 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
 }
+/*------------------------------------------------------------------------------------------------*/
 
-.container{
+/* Container Styles */
+.container {
     text-align: left;
+    width: 100%;
 }
 
+/*------------------------------------------------------------------------------------------------*/
+/* Post Styles */
 .post {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -43,22 +81,39 @@ nav ul li a {
     height: 200px; /* Set the desired height */
     vertical-align: top;
 }
+
+/* The place to post iamges */
 .post-image {
     max-width: 100%;
     height: auto;
 }
 
+/* The home page 49er wallpaper */
 .front-page {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    max-width: 100%;
+    height: fit;
 }
+/*------------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------------------------*/
+/* Footer Styles */
 footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
     background-color: #333;
     color: #fff;
     text-align: center;
-    margin: -5px 0 0;
-    padding: 0px; /* Adjust the padding */
-    font-size: 15px; /* Adjust the font size */
 }
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/* Logo Styles */
+.logo {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+/*------------------------------------------------------------------------------------------------*/
