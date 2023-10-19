@@ -12,15 +12,10 @@
     <header>
         <div id="app">
             <div id="wrapper">
-                <h1 class="glitch" data-text="Niner">Niner</h1>
+                <h1 class="glitch" data-text="N NER">N NER</h1>
             </div>
         <img class="logo" src="images/Logo.png" alt= "Logo">
         <nav>
-            <ul>
-                <li><a href="index.html">Logo</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
         </nav>
     </header>
 
@@ -29,7 +24,7 @@
 
     <div class="login-container">
         <div class="form-box">
-            <h1 id="title">Sign Up</h1>
+            <h1 id="title">Sign In</h1>
             <form class="new-form">
                 <div class="input-group">
                     <div class="input-field" id="nameField">
@@ -49,8 +44,19 @@
                 </div>
 
                 <div class="btn-field">
-                    <button type="button" id="signUpBtn" >Sign Up</button>
-                    <button type="button" id="loginBtn" class="disable" >Sign In</button>
+
+                    <button type="button" id="signUpBtn" onClick="redirectoPage()" >Sign Up</button>
+                    <script>
+                        function redirectoPage() {
+                            window.location.href = 'signup.html';
+                        }
+                </script>
+                    <button type="button" id="loginBtn" class="disable" onclick="redirectToPage()">Sign In</button>
+                        <script>
+                                function redirectToPage() {
+                                    window.location.href = 'index.html';
+                                }
+                        </script>
                 </div>
             </form>
         </div>

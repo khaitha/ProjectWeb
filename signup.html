@@ -1,2 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
-<i class="fa-solid fa-user fa-bounce"></i>
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/glitch.css">
+</head>
+<body>
+    <header>
+        <div id="app">
+            <div id="wrapper">
+                <h1 class="glitch" data-text="N NER">N NER</h1>
+            </div>
+            <a href="home.html">
+                <img class="logo" src="images/Logo.png" alt="Logo">
+            </a>
+        <nav>
+        </nav>
+    </header>
+
+    <main>
+            <img class="front-page" src="images/49ers.png" alt= "Front UNCC">
+
+            <div class="login-container">
+                <div class="form-box">
+                    <h1 id="title">Sign Up</h1>
+                    <form class="new-form">
+                        <div class="input-group">
+                            <div class="input-field" id="nameField">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="Name" placeholder="Name" minlength="5" required>
+                            </div>
+            
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="Email" placeholder="Email" required>
+                            </div>
+            
+                            <div class="input-field">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="Password" placeholder="Password" minlength="8" required>
+                            </div>
+            
+                            <div class="input-field">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="PhoneNumber" placeholder="Phone Number" required>
+                            </div>
+                        </div>
+            
+                        <div class="btn-field2">
+                            <button type="button" id="signUpBtn" onClick="redirectToPage()">Sign Up</button>
+                            <script>
+                                function redirectToPage() {
+                                    window.location.href = 'signup.html';
+                                }
+                            </script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Social Media Platform</p>
+    </footer>
+</body>
+</html>
