@@ -7,6 +7,7 @@
     <title>Social Media Design</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/glitch.css">
+    <script src="java.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,46 +23,41 @@
     </header>
 
     <main>
-            <img class="front-page" src="images/49ers.png" alt= "Front UNCC">
+        <img class="front-page" src="images/49ers.png" alt="Front UNCC">
 
-            <div class="login-container">
-                <div class="form-box">
-                    <h1 id="title">Sign Up</h1>
-                    <form class="new-form">
-                        <div class="input-group">
-                            <div class="input-field" id="nameField">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" id="Name" placeholder="Name" minlength="5" required>
-                            </div>
-            
-                            <div class="input-field">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" id="Email" placeholder="Email" required>
-                            </div>
-            
-                            <div class="input-field">
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" id="Password" placeholder="Password" minlength="8" required>
-                            </div>
-            
-                            <div class="input-field">
-                                <i class="fa-solid fa-phone"></i>
-                                <input type="tel" id="PhoneNumber" placeholder="Phone Number" required>
-                            </div>
+        <div class="login-container">
+            <div class="form-box">
+                <h1 id="title">Sign Up</h1>
+                <form class="new-form">
+                    <div class="input-group">
+                        <div class="input-field" id="nameField">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="Name" placeholder="Name" minlength="5" required>
                         </div>
-            
-                        <div class="btn-field2">
-                            <button type="button" id="signUpBtn" onClick="redirectToPage()">Sign Up</button>
-                            <script>
-                                function redirectToPage() {
-                                    window.location.href = 'signup.html';
-                                }
-                            </script>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="Email" placeholder="Email" required>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="Password" placeholder="Password" minlength="8" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="PhoneNumber" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <div class="btn-field2">
+                        <button type="button" id="signUpBtn" onclick="validateAndSubmit()">Sign Up</button>
+                    </div>
+                </form>
             </div>
-            
+        </div>
+
     </main>
 
     <footer>

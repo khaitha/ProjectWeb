@@ -141,6 +141,7 @@ nav ul {
     background: transparent;
     resize: none;
 }
+
 /*Login Container --------------------------------------------------------------------------------------*/
 .form-box{
     width: 90%;
@@ -353,6 +354,38 @@ form p{
     left: -20px;
     top: -60px;
 }
+
+/* Post Styles */
+
+.post-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: 20px;
+    margin-top: 200px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.post {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post p {
+    margin: 0;
+    font-size: 14px;
+    white-space: normal; /* Allow text to wrap to the next line */
+}
+.post-content {
+    word-wrap: break-word;
+}
+
+
 /*-------------------------------------------------------------------------------------------------------------*/
 /* The place to post iamges */
 .post-image {

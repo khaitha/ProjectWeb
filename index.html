@@ -7,6 +7,7 @@
     <title>Social Media Design</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/css/glitch.css">
+    <script src="java.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,13 +16,12 @@
                 <h1 class="glitch" data-text="N NER">N NER</h1>
             </div>
         </div>
-/*hi*\
         <a href="profile.html">
         <img class="user-logo" src="images/user.png" alt= "User Logo">
         </a>
         <nav>
             <ul>
-                <a href="home.html">
+                <a href="index.html">
                     <img class="logo" src="images/Logo.png" alt="Logo">
                 </a>
             </ul>
@@ -33,14 +33,19 @@
         <div class="write-post-container">
             <div class="user-profile">
                 <img src="images/profile.jpg">
-                    <div class="user-name">
-                        <p>Bhuvi The Goat</p>
-                            </div>
+                <div class="user-name">
+                    <p id="userNameDisplay"></p>
+                </div>
             </div>
             <div class="post-input-container">
-                <textarea rows="3" placeholder="What do you want to post?"></textarea>
-                <button type="button">Post</button>
+                <textarea id="postContent" rows="3" placeholder="What do you want to post?"></textarea>
+                <button type="button" onclick="createPost()">Post</button>
             </div>
+        </div>
+    
+        <!-- Container for displaying posts -->
+        <div class="post-container" id="postContainer">
+            <!-- Posts will be dynamically added here -->
         </div>
     </main>
 
