@@ -140,31 +140,7 @@ function savePost(post) {
     localStorage.setItem('posts', JSON.stringify(storedPosts));
 }
 
-// Function to retrieve posts from sessionStorage and display them
-function displayStoredPosts() {
-    var storedPosts = JSON.parse(sessionStorage.getItem('posts')) || [];
-    var postContainer = document.getElementById('postContainer');
 
-    // Clear the existing posts in the container
-    postContainer.innerHTML = '';
-
-    storedPosts.forEach(function (post) {
-        displayPost(post);
-    });
-}
-
-// Call displayStoredPosts to load existing posts when the script is loaded
-displayStoredPosts();
-
-// Function to save a post to sessionStorage
-function savePostToStorage(post) {
-    var storedPosts = JSON.parse(sessionStorage.getItem('posts')) || [];
-    storedPosts.push(post);
-    sessionStorage.setItem('posts', JSON.stringify(storedPosts));
-}
-
-// Example of saving a post
-savePostToStorage(examplePost);
 
 
 
