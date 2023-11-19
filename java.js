@@ -105,14 +105,13 @@ function createPost() {
 }
 
 // Function to display a post on the page
-// Function to display a post on the page
 function displayPost(post) {
     var postContainer = document.getElementById('postContainer');
 
     // Create elements for the post
     var postElement = document.createElement('div');
     postElement.className = 'post';
-    
+
     var userNameElement = document.createElement('p');
     userNameElement.textContent = post.userName;
 
@@ -127,6 +126,45 @@ function displayPost(post) {
     postElement.appendChild(userNameElement);
     contentContainer.appendChild(contentElement);
     postElement.appendChild(contentContainer);
-    
+
+    // Save the post to Local Storage
+    savePost(post);
+
     postContainer.appendChild(postElement);
 }
+
+// Function to save a post to Local Storage
+function savePost(post) {
+    var storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    storedPosts.push(post);
+    localStorage.setItem('posts', JSON.stringify(storedPosts));
+}
+
+// Function to retrieve posts from sessionStorage and display them
+function displayStoredPosts() {
+    var storedPosts = JSON.parse(sessionStorage.getItem('posts')) || [];
+    var postContainer = document.getElementById('postContainer');
+
+    // Clear the existing posts in the container
+    postContainer.innerHTML = '';
+
+    storedPosts.forEach(function (post) {
+        displayPost(post);
+    });
+}
+
+// Call displayStoredPosts to load existing posts when the script is loaded
+displayStoredPosts();
+
+// Function to save a post to sessionStorage
+function savePostToStorage(post) {
+    var storedPosts = JSON.parse(sessionStorage.getItem('posts')) || [];
+    storedPosts.push(post);
+    sessionStorage.setItem('posts', JSON.stringify(storedPosts));
+}
+
+// Example of saving a post
+savePostToStorage(examplePost);
+
+
+
