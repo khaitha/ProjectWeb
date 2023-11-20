@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/glitch.css">
 </head>
 <body>
+    <script src="java.js"></script>
     <header>
         <div id="app">
             <div id="wrapper">
@@ -28,12 +29,13 @@
         <div class="bio-container">
             <section class="bio">
                 <div class="profile-picture">
-                    <img src="images/indianguy.jpg">
-                    <button class="change-profile-button">Change Profile Picture</button>
-                    <input type="file" class="profile-picture-input" accept="image/*">
+                    <label class="change-profile-label" for="profile-picture-input">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>Change Profile Picture</span>
+                    </label>
+                    <input type="file" id="profile-picture-input" class="profile-picture-input" accept="image/*" onchange="loadProfilePicture(event)">
+                    <img id="profile-image" src="images/indianguy.jpg" width="200">
                 </div>
-                <h2>Bio</h2>
-                <p>Post content goes here.</p>
             </section>
         </div>
     </main>

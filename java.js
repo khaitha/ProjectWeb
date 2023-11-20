@@ -107,6 +107,7 @@ function createPost() {
 // Function to display a post on the page
 function displayPost(post) {
     var postContainer = document.getElementById('postContainer');
+    var footer = document.querySelector('footer');
 
     // Create elements for the post
     var postElement = document.createElement('div');
@@ -130,7 +131,13 @@ function displayPost(post) {
     // Save the post to Local Storage
     savePost(post);
 
+    // Append the post to the post container
     postContainer.appendChild(postElement);
+
+    // Adjust the top position of the footer
+    var currentFooterTop = parseFloat(window.getComputedStyle(footer).top);
+    var newFooterTop = currentFooterTop + postElement.offsetHeight; // Adjust as needed
+    footer.style.top = newFooterTop + 'px';
 }
 
 // Function to save a post to Local Storage
@@ -140,7 +147,28 @@ function savePost(post) {
     localStorage.setItem('posts', JSON.stringify(storedPosts));
 }
 
+function loadProfilePicture(event) {
+    const profileImage = document.getElementById("profile-image");
+    const userLogo = document.querySelector('.user-logo');
 
+    // Set the source of the profile image
+    profileImage.src = URL.createObjectURL(event.target.files[0]);
 
+    // Set the source of the user logo
+    userLogo.src = profileImage.src; // Assuming you want the user logo to be the same as the profile image
+}
+
+function editNews() {
+    // Get the current news content
+    var currentContent = document.getElementById('newsContent').innerHTML;
+
+    // Prompt the user to enter new content
+    var newContent = prompt("Edit the news content:", currentContent);
+
+    // Update the news content
+    if (newContent !== null) {
+        document.getElementById('newsContent').innerHTML = newContent;
+    }
+}
 
 

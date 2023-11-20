@@ -368,6 +368,9 @@ form p{
     max-width: 600px;
     width: 100%;
 }
+.post-container {
+    overflow-y: auto;
+}
 
 .post {
     background-color: #fff;
@@ -407,8 +410,8 @@ form p{
     background-size: 100% 100%;
 }
 .bio {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    /* background-color: #f9f9f9; */
+    /* border: 1px solid #ccc; */
     padding: 10px;
     margin: 0 10px 20px; /* Adjust margin for spacing */
     display: inline-block;
@@ -425,7 +428,9 @@ footer {
     justify-content: center;
     background-color: #333;
     color: #fff;
+    position: relative;
     text-align: center;
+    margin-top: auto;
 }
 /*------------------------------------------------------------------------------------------------*/
 
