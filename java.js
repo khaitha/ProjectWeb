@@ -94,8 +94,6 @@ function createPost() {
             // Display the post on the page
             displayPost(post);
 
-            // Optionally, you can save the post to sessionStorage or another data store
-            // SavePostToStorage(post);
         } else {
             alert('Please enter post content.');
         }
@@ -147,16 +145,31 @@ function savePost(post) {
     localStorage.setItem('posts', JSON.stringify(storedPosts));
 }
 
-function loadProfilePicture(event) {
+
+// Load the profile picture from local storage when the page loads
+window.onload = function() {
     const profileImage = document.getElementById("profile-image");
-    const userLogo = document.querySelector('.user-logo');
+    const userLogo = document.querySelector('user-profile'); 
 
-    // Set the source of the profile image
-    profileImage.src = URL.createObjectURL(event.target.files[0]);
-
-    // Set the source of the user logo
-    userLogo.src = profileImage.src; // Assuming you want the user logo to be the same as the profile image
+    if (localStorage.getItem('profile-image')) {
+        profileImage.src = localStorage.getItem('profile-image');
+        userLogo.src = profileImage.src;
+    }
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Check if there's a saved profile image in localStorage
+    const savedProfileImage = localStorage.getItem("profileImage");
+    if (savedProfileImage) {
+        // Update the user profile image on the other page
+        const userProfileImageOnOtherPage = document.querySelector(".user-profile img");
+        if (userProfileImageOnOtherPage) {
+            userProfileImageOnOtherPage.src = savedProfileImage;
+        }
+    }
+});
+
 
 function editNews() {
     // Get the current news content

@@ -89,7 +89,13 @@ nav ul {
 }
 
 .bio-container img{
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    object-fit: cover;
     width: 100%;
+    border-radius: 50%;
 }
 
 .bio-container p,
