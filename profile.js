@@ -3,11 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedProfileImage = localStorage.getItem("profileImage");
     if (savedProfileImage) {
         document.getElementById("profile-image").src = savedProfileImage;
-        // Also update the user logo if available on the current page
-        const userLogoOnPage = document.querySelector(".user-logo");
-        if (userLogoOnPage) {
-            userLogoOnPage.src = savedProfileImage;
-        }
     }
 });
 
@@ -21,11 +16,6 @@ function loadProfilePicture(event) {
         reader.onload = function (e) {
             const imageData = e.target.result;
             document.getElementById("profile-image").src = imageData;
-            // Update the user logo if available on the current page
-            const userLogoOnPage = document.querySelector(".user-logo");
-            if (userLogoOnPage) {
-                userLogoOnPage.src = imageData;
-            }
 
             // Save image data to localStorage
             localStorage.setItem("profileImage", imageData);
