@@ -1,72 +1,41 @@
-const API_KEY = "61dbaa2c560946d5bd505d85008f979d"
-const url = "https://newsapi.org/v2/everything?q=";
-res.setHeader('Access-Control-Allow-Origin', 'https://webpages.charlotte.edu/');
-res.setHeader('Access-Control-Allow-Origin', 'https://webpages.charlotte.edu/ktha/itis3135/ProjectWeb/index.html');
+apikey = 'e2e4e8f96720e7271575d911bd0d3e92';
+url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=' + apikey;
 
-window.addEventListener("load", () => fetchNews("USA"));
+document.getElementById('search-button').addEventListener('click', function () {
+    const searchText = document.getElementById('search-text').value;
+    const apiKey = 'e2e4e8f96720e7271575d911bd0d3e92';
+    const apiUrl = `https://gnews.io/api/v4/search?q=${searchText}&lang=en&country=us&max=10&apikey=${apiKey}`;
 
-function reload() {
-    window.location.reload();
-}
+    fetch(apiUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const cardsContainer = document.getElementById('cards-container');
+        const template = document.getElementById('template-news-card');
 
-async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    bindData(data.articles);
-}
+        // Clear existing cards
+        cardsContainer.innerHTML = '';
 
-function bindData(articles) {
-    const cardsContainer = document.getElementById("cards-container");
-    const newsCardTemplate = document.getElementById("template-news-card");
+        // Populate cards with news articles
+        data.articles.forEach(function (article) {
+          const clone = template.content.cloneNode(true);
+          const card = clone.querySelector('.card');
+          const img = clone.querySelector('#news-img');
+          const title = clone.querySelector('#news-title');
+          const source = clone.querySelector('#news-source');
+          const desc = clone.querySelector('#news-desc');
 
-    cardsContainer.innerHTML = "";
+          // Set data from API response
+          img.src = article.image || 'https://via.placeholder.com/400x200';
+          title.textContent = article.title;
+          source.textContent = `${article.source.name} ${article.publishedAt}`;
+          desc.textContent = article.description;
 
-    articles.slice(0, 10).forEach((article) => {
-        if (!article.urlToImage) return;
-        const cardClone = newsCardTemplate.content.cloneNode(true);
-        fillDataInCard(cardClone, article);
-        cardsContainer.appendChild(cardClone);
-    });
-}
-
-
-function fillDataInCard(cardClone, article) {
-    const newsImg = cardClone.querySelector("#news-img");
-    const newsTitle = cardClone.querySelector("#news-title");
-    const newsSource = cardClone.querySelector("#news-source");
-    const newsDesc = cardClone.querySelector("#news-desc");
-
-    newsImg.src = article.urlToImage;
-    newsTitle.innerHTML = article.title;
-    newsDesc.innerHTML = article.description;
-
-    const date = new Date(article.publishedAt).toLocaleString("en-US", {
-        timeZone: "America/New_York",
-    });
-
-    newsSource.innerHTML = `${article.source.name} · ${date}`;
-
-    cardClone.firstElementChild.addEventListener("click", () => {
-        window.open(article.url, "_blank");
-    });
-}
-
-let curSelectedNav = null;
-function onNavItemClick(id) {
-    fetchNews(id);
-    const navItem = document.getElementById(id);
-    curSelectedNav?.classList.remove("active");
-    curSelectedNav = navItem;
-    curSelectedNav.classList.add("active");
-}
-
-const searchButton = document.getElementById("search-button");
-const searchText = document.getElementById("search-text");
-
-searchButton.addEventListener("click", () => {
-    const query = searchText.value;
-    if (!query) return;
-    fetchNews(query);
-    curSelectedNav?.classList.remove("active");
-    curSelectedNav = null;
-});
+          cardsContainer.appendChild(card);
+        });
+      })
+      .catch(function (error) {
+        console.error('Error fetching data:', error);
+      });
+  });
