@@ -171,17 +171,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function editNews() {
-    // Get the current news content
-    var currentContent = document.getElementById('newsContent').innerHTML;
-
-    // Prompt the user to enter new content
-    var newContent = prompt("Edit the news content:", currentContent);
-
-    // Update the news content
-    if (newContent !== null) {
-        document.getElementById('newsContent').innerHTML = newContent;
-    }
-}
-
 

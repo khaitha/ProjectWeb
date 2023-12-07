@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/css/glitch.css">
     <script src="java.js" defer></script>
+    <script src="api.js" defer></script>
+    
+
 </head>
 <body>
     <header>
@@ -47,17 +50,20 @@
         <!-- Container for displaying posts -->
         <div class="post-container" id="postContainer">
             <!-- Posts will be dynamically added here -->
+            <nav>
+                <div class="main-nav container flex">
+                    <div class="search-bar flex">
+                        <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                        <button id="search-button" class="search-button">Search</button>
+                    </div>
+                </div>
+            </nav>
         </div>
+
     </main>
 
     <div class="main-sidebar" id="newsContainer">
-        <h2>News</h2>
-        <!-- Add your updates and advertisements here -->
-        <div class="update" id="newsContent">
-            <p>Details about the school event...</p>
-        </div>
-    
-        <button onclick="editNews()">Edit News</button>
+        
     </div>
 </body>
 </html>
