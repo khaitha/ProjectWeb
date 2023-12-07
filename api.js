@@ -1,5 +1,7 @@
 const API_KEY = "61dbaa2c560946d5bd505d85008f979d"
 const url = "https://newsapi.org/v2/everything?q=";
+res.setHeader('Access-Control-Allow-Origin', 'https://webpages.charlotte.edu/');
+res.setHeader('Access-Control-Allow-Origin', 'https://webpages.charlotte.edu/ktha/itis3135/ProjectWeb/index.html');
 
 window.addEventListener("load", () => fetchNews("USA"));
 
