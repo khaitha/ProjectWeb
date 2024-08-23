@@ -1,1 +1,6 @@
-A very simple web that allows you to pull News API.
+A very simple web that resembles a social media. 
+
+- User Creation
+- Password
+- Username
+- Posting images
